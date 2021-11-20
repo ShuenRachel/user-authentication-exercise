@@ -14,12 +14,12 @@ Try on creating user authentication system(User Login)
 ## Installation
 1. Open terminal and clone the repo to local
 ```
-git clone https://github.com/ShuenRachel/URL-shortener.git
+git clone https://github.com/ShuenRachel/user-authentication-exercise
 ```
 
 2. Move to repo file
 ```
-cd url-shortener
+cd user-authentication-exercise
 ```
 
 3. Start dependencies installation
