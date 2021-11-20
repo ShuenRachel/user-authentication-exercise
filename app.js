@@ -5,9 +5,15 @@ const { engine } = require('express-handlebars')
 
 app.engine('hbs', engine({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
-app.set("views", "./views");
+app.set("views", "./views")
+
+app.use(express.static('public'))
 
 app.get('/', (req, res) => {
+  res.redirect('/login')
+})
+
+app.get('/login', (req, res) => {
   res.render('login')
 })
 
