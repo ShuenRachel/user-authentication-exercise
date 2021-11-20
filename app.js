@@ -21,8 +21,30 @@ app.get('/login', (req, res) => {
 })
 
 app.post('/login', (req, res) => {
-  // const { email, password } = req.body
-  res.render('login')
+  const { email, password } = req.body
+
+  // find user
+  const loginUser = userList.find(user => {
+    return user.email.match(email.toLowerCase())
+  })
+
+  if ((!loginUser) || (loginUser.password !== password)) {
+    res.render('login', { error: true, email: email } )
+    return
+  }
+
+  res.redirect(`/user/${loginUser.email}`)
+  // res.render('welcome', { user: loginUser })
+})
+
+app.get('/user/:user_email', (req, res) => {
+  const email = req.params.user_email
+
+  const user = userList.find(user => {
+    return user.email.match(email)
+  })
+  
+  res.render('welcome', { user })
 })
 
 app.listen(PORT, () => {

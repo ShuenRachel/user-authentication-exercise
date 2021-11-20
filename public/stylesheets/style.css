@@ -45,3 +45,8 @@ body {
   border-radius: 8px;
   font-size: 15px;
 }
+
+.login-error {
+  color: red;
+  font-size: small;
+}

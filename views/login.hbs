@@ -4,8 +4,11 @@
   </div>
 
   <form action="/login" method="post" class="login-form">
-    <input type="email" name="email" placeholder="Email" class="form-item" required>
+    <input type="email" name="email" placeholder="Email" class="form-item" value="{{ email }}" required>
     <input type="password" name="password" placeholder="Password" class="form-item" required>
+    {{#if error}}
+    <span class="login-error">Incorrect Username or Password</span>
+    {{/if}}
     <button type="submit" class="form-item">Sign in</button>
   </form>
 </div>
